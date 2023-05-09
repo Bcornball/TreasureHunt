@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Adventure extends JFrame {
+    private JButton startButton;
+
+    public Adventure() {
+        super("Adventure Game");
+        startButton = new JButton("Start");
+        startButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                startGame();
+            }
+        });
+        setLayout(new FlowLayout());
+        add(startButton);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    public void startGame() {
+        // Code to start the game goes here
+        JOptionPane.showMessageDialog(this, "The game has started!");
+    }
+
+    public static void main(String[] args) {
+        new Adventure();
+    }
+}
